@@ -3,84 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <title>The Sweet Assist</title>
-
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 700px;
-      margin: 60px auto;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 10px;
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: 2.2em;
-    }
-
-    h2 {
-      margin-top: 30px;
-      font-size: 1.4em;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 6px;
-    }
-
-    p {
-      line-height: 1.6;
-      font-size: 1em;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .contact {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-    }
-  </style>
-
-<!-- Favicon for your site -->
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #FFF8F1;
+      color: #3A2E2A;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Hero */
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: #fdf0f5;
+    }
+    header img { width: 100px; margin-bottom: 20px; }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin: 0;
+    }
+    header p.tagline {
+      font-size: 1.2em;
+      color: #f49bb6;
+      margin-top: 10px;
+    }
+
+    /* Main Section */
+    .main-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 60px;
+      padding: 60px 20px;
+      flex-wrap: wrap;
+    }
+    .about {
+      flex: 1 1 300px;
+      max-width: 400px;
+      text-align: left;
+    }
+    .about img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+    .about p {
+      line-height: 1.6;
+    }
+    .about button {
+      background: #f6c1cc;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .about button:hover { background: #f2a9b8; transform: translateY(-2px); }
+
+    .details {
+      flex: 1 1 300px;
+      max-width: 400px;
+      text-align: left;
+    }
+    .details h3 {
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 1.4em;
+    }
+    .details ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .details ul li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 18px;
+    }
+    .details ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #f49bb6;
+      font-weight: bold;
+    }
+
+    /* Tools section */
+    .tools-section {
+      overflow: hidden;
+      padding: 40px 0;
+      background: #fff0f3;
+    }
+    .logo-slider {
+      display: flex;
+      width: calc(200px * 8);
+      animation: scroll 20s linear infinite;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-slider img { width: 150px; height: auto; opacity: 0.8; }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #fdf0f5;
+      font-size: 0.9em;
+    }
+    footer a {
+      margin: 0 10px;
+      color: #3a2e2a;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    footer a:hover { color: #f49bb6; }
+  </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>Hi, I’m Sweet 👋</h1>
 
-    <p>
-      I’m a Remote Executive Assistant and Affiliate Marketing Manager,
-      supporting online businesses with organized systems and reliable support.
-    </p>
+<header data-aos="fade-down">
+  <img src="favicon.ico" alt="The Sweet Assist Logo">
+  <h1>The Sweet Assist</h1>
+  <p class="tagline">Where your professional growth gets a sweet assist.</p>
+</header>
 
-    <h2>What I Do</h2>
+<section class="main-section">
+  <!-- About Me -->
+  <div class="about" data-aos="fade-right">
+    <img src="your-photo.png" alt="Your Photo">
+    <p>Hello! I help businesses run smoother with friendly, reliable support. My goal is to make your daily operations easier, more efficient, and… sweeter!</p>
+    <button onclick="window.location.href='resume.pdf'">Download Resume</button>
+  </div>
+
+  <!-- Details -->
+  <div class="details" data-aos="fade-left">
+    <h3>Experience</h3>
     <ul>
-      <li>Executive & Admin Support</li>
-      <li>Affiliate Program Management</li>
-      <li>Social Media & Email Support</li>
-      <li>Basic Graphic Design (Canva)</li>
+      <li>Executive Assistant at Simple Assistant</li>
+      <li>Affiliate Manager / Virtual Assistant at Ted's List</li>
+      <li>Executive & Admin Assistant at Market Performance Group</li>
+      <li>Other freelance projects</li>
     </ul>
 
-    <div class="contact">
-      <h2>Contact</h2>
-      <p>Email: your@email.com</p>
-    </div>
+    <h3>Education</h3>
+    <ul>
+      <li>Bachelor's in Education</li>
+    </ul>
+
+    <h3>Licenses</h3>
+    <ul>
+      <li>Philippine Teacher Licensure Exam</li>
+      <li>Google Data Analytics Certificate</li>
+    </ul>
   </div>
+</section>
+
+<!-- Tools / Moving Logos -->
+<section class="tools-section" data-aos="fade-up">
+  <div class="logo-slider">
+    <img src="logo-canva.png" alt="Canva">
+    <img src="logo-github.png" alt="GitHub">
+    <img src="logo-notion.png" alt="Notion">
+    <img src="logo-mailchimp.png" alt="Mailchimp">
+    <img src="logo-canva.png" alt="Canva">
+    <img src="logo-github.png" alt="GitHub">
+    <img src="logo-notion.png" alt="Notion">
+    <img src="logo-mailchimp.png" alt="Mailchimp">
+  </div>
+</section>
+
+<footer>
+  <p>
+    <a href="mailto:your@email.com">Email</a> | 
+    <a href="contact.html">Contact</a> | 
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+  </p>
+  <p>© 2026 The Sweet Assist | Assisting sweetly</p>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000 });
+</script>
+
 </body>
 </html>
-
-<!-- rebuild pages -->
