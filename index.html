@@ -25,7 +25,7 @@
     header {
   text-align: center;
   padding: 40px 20px; /* smaller header height */
-  background: #fdf0f5;
+  background: #e6f3f5;
 }
 
 header img {
@@ -68,7 +68,8 @@ header p.tagline {
       line-height: 1.6;
     }
     .about button {
-      background: #f6c1cc;
+      background: #00697B;
+      color: white
       border: none;
       padding: 12px 25px;
       border-radius: 25px;
@@ -77,7 +78,7 @@ header p.tagline {
       font-weight: 600;
       transition: 0.3s;
     }
-    .about button:hover { background: #f2a9b8; transform: translateY(-2px); }
+    .about button:hover { background: #00515e; transform: translateY(-2px); }
 
     .details {
       flex: 1 1 300px;
@@ -103,7 +104,7 @@ header p.tagline {
       content: "•";
       position: absolute;
       left: 0;
-      color: #f49bb6;
+      color: #00697B;
       font-weight: bold;
     }
 
@@ -127,6 +128,21 @@ header p.tagline {
       to { transform: translateX(-50%); }
     }
 
+  /* Card */
+  .about-card {
+    background: #f4fbfc; /* very light teal wash */
+    padding: 30px;
+    border-radius: 28px; /* squircle feel */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  }
+  
+  .about-card img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+    
     /* Footer */
     footer {
       text-align: center;
@@ -154,10 +170,13 @@ header p.tagline {
 <section class="main-section">
   <!-- About Me -->
   <div class="about" data-aos="fade-right">
+  <div class="about-card">
     <img src="your-photo.png" alt="Your Photo">
     <p>I’m Mary Sweet, and I believe that the best support is felt, not seen. With over 4 years of experience, I specialize in taking the weight off your shoulders. Whether it's managing complex affiliate programs or keeping your calendar airtight, I focus on the details so you can stay focused on the big picture. I’m here to ensure your professional journey is moving forward—assisting sweetly every step of the way.</p>
-    <button onclick="window.location.href='Resume - Mary Sweet Sabala (2026).pdf'">Download Resume</button>
+    <button onclick="window.location.href='resume.pdf'">Download Resume</button>
   </div>
+</div>
+
 
   <!-- Details -->
   <div class="details" data-aos="fade-left">
