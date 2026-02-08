@@ -203,8 +203,6 @@ body { scroll-padding-top: 90px; }
 
 .photo {
   width: 100%;
-  max-width: 350px;  /* controls photo width */
-  height: 380px;     /* controls height */
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 16px;
