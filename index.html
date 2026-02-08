@@ -2,158 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Sweet Assist</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
   <link rel="icon" href="images/favicon.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
+  
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="header-inner">
-      <div class="brand">
-        <!-- Use your logo file here -->
-        <img class="brand-logo" src="images/full_logo.png" alt="Sweet Assist logo" />
-        <div class="brand-text">
-          <div class="brand-name">Sweet Assist</div>
-          <div class="brand-tagline">Where Your Professional Growth Gets a Sweet Assist!</div>
-        </div>
-      </div>
 
-      <nav class="nav">
-        <button class="nav-link" data-jump="services">Services</button>
-        <button class="nav-link" data-jump="work">Work</button>
-        <button class="nav-link" data-jump="contact">Contact</button>
-      </nav>
-    </div>
-
-    <!-- Moving strip -->
-    <div class="ticker" aria-label="Moving announcement">
-      <div class="ticker-track" id="tickerTrack">
-        <span>Admin Support • Email & Calendar • Affiliate Support • Social Media Scheduling • Canva Design • Research • Systems & SOPs • </span>
-        <span>Admin Support • Email & Calendar • Affiliate Support • Social Media Scheduling • Canva Design • Research • Systems & SOPs • </span>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main (kept compact to avoid long scroll) -->
-  <main class="main">
-    <!-- Left card -->
-    <section class="about-card" id="work">
-      <div class="about-top">
-        <div class="photo-frame">
-          <!-- Put a portrait here if you want -->
-          <img src="images/profile_photo.png" alt="Your photo" onerror="this.style.display='none'; this.parentElement.classList.add('empty');" />
-          <div class="photo-fallback">
-            <span>photo</span>
-          </div>
-        </div>
-
-        <div class="about-copy">
-          <h1 class="title">Hi, I’m Sweet.</h1>
-          <p class="subtitle">
-            I support founders and busy teams with reliable admin, content coordination, and calm systems.
-          </p>
-          <p class="small">
-            This site is intentionally simple: quick overview, clear services, and easy booking.
-          </p>
-        </div>
-      </div>
-
-      <div class="work-box">
-        <div class="work-header">
-          <div class="work-title">Work</div>
-          <div class="work-hint">Loaded from <code>work.csv</code></div>
-        </div>
-        <ul class="work-list" id="workList">
-          <!-- Filled by JS -->
-        </ul>
-      </div>
-
-      <div class="about-actions">
-        <a class="btn" href="#contact" data-jump="contact">Contact</a>
-        <a class="btn btn-ghost" href="#services" data-jump="services">View Services</a>
-      </div>
-    </section>
-
-    <!-- Right: Services -->
-    <section class="services" id="services">
-      <div class="services-head">
-        <h2 class="section-title">Services Offered</h2>
-        <p class="section-subtitle">Hover a service to preview details. Click to book.</p>
-      </div>
-
-      <div class="services-layout">
-        <div class="services-grid" id="servicesGrid" aria-label="Services list">
-          <!-- Filled by JS -->
-        </div>
-
-        <!-- Hover bubble (like your sketch) -->
-        <aside class="hover-bubble" id="hoverBubble" aria-live="polite">
-          <div class="bubble-title" id="bubbleTitle">Hover a service</div>
-          <ul class="bubble-points" id="bubblePoints"></ul>
-          <div class="bubble-actions">
-            <a class="btn" id="bubbleBook" href="#contact">Book Now</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer" id="contact">
-    <div class="footer-inner">
-      <div class="footer-links">
-        <a class="footer-link" id="emailLink" href="mailto:hello@yourdomain.com">Email</a>
-        <span class="dot">•</span>
-        <a class="footer-link" id="linkedinLink" href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noreferrer">LinkedIn</a>
-      </div>
-
-      <div class="footer-line">
-        The Sweet Assist — assisting smoothly since 2021
-      </div>
-
-      <div class="footer-copy">
-        © <span id="year"></span> Sweet Assist
-      </div>
-    </div>
-  </footer>
-
-  <!-- Simple booking modal -->
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-head">
-        <div class="modal-title" id="modalTitle">Book a Sweet Assist</div>
-        <button class="icon-btn" id="modalClose" aria-label="Close">✕</button>
-      </div>
-
-      <div class="modal-body">
-        <p class="modal-text" id="modalText">
-          Tell me what you need help with and your preferred schedule.
-        </p>
-
-        <div class="modal-actions">
-          <a class="btn" id="modalMailto" href="mailto:hello@yourdomain.com?subject=Sweet%20Assist%20Inquiry">Email to Book</a>
-          <button class="btn btn-ghost" id="copyTemplate">Copy Message Template</button>
-        </div>
-
-        <textarea class="template" id="template" readonly>
-Hi Sweet,
-
-I’d like help with: [service]
-Goal/outcome: [what success looks like]
-Hours needed: [weekly or one-time]
-Timezone + best times: [your availability]
-Tools you use: [Gmail/Google Calendar/Notion/Sheets/etc.]
-
-Thanks!
-        </textarea>
-      </div>
+<header class="header">
+  <div class="brand">
+    <img src="images/full_logo.png" class="logo" />
+    <div>
+    <div class="tagline">Where Your Professional Growth Gets a Sweet Assist!</div>
     </div>
   </div>
+</header>
 
-  <script src="script.js"></script>
+<!-- MOVING STRIP -->
+<section class="marquee" aria-label="Benefits">
+  <div class="marquee-track">
+    <span class="marquee-item">More Focus</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Smoother Workflows</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Clearer Communication</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Organized Backend</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Consistent Execution</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Time Back in Your Day</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Fewer Loose Ends</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Steady Support</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Less Stress</span>
+    <span class="dot">•</span>
+
+    <!-- Duplicate for smooth loop -->
+    <span class="marquee-item">More Focus</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Smoother Workflows</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Clearer Communication</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Organized Backend</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Consistent Execution</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Time Back in Your Day</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Fewer Loose Ends</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Steady Support</span>
+    <span class="dot">•</span>
+    <span class="marquee-item">Less Stress</span>
+    <span class="dot">•</span>
+  </div>
+</section>
+
+<main class="main">
+
+  <!-- About Section -->
+  <section class="about" data-aos="fade-up">
+    <div class="photo">
+      <img src="images/profile_photo.png" alt="Sweet Assist profile photo">
+    </div>
+    <div class="about-text">
+    <p class="about-body">
+      I’m <strong>Mary Sweet</strong>, and I believe that the best support is felt, not seen. With over <strong>4 years of experience</strong>, I specialize in taking the weight off your shoulders.
+      <br /><br />
+      Whether it’s managing complex affiliate programs or keeping your calendar airtight, I focus on the details so you can stay focused on the big picture. I’m here to ensure your professional journey is moving forward—assisting sweetly every step of the way.
+    </p>
+    <a class="btn" href="career.html">View Career History</a>
+    </div>
+    
+  </section>
+
+
+  <!-- Services Section -->
+  <section class="services" data-aos="fade-up" data-aos-delay="100">
+    <h2>Services Offered</h2>
+
+    <div class="service-grid">
+
+      <div class="service" data-aos="fade-up" data-aos-delay="150"
+        onmouseenter="showBubble('Affiliate Operations Support',
+        ['Affiliate link management','Partner coordination','Performance tracking','Campaign support'])"
+        onclick="openModal('Affiliate Operations Support')">
+        Affiliate Operations Support
+      </div>
+
+      <div class="service" data-aos="fade-up" data-aos-delay="200"
+        onmouseenter="showBubble('TikTok Shop Coordination',
+        ['Product listing support','Creator coordination','Campaign logistics','Shop backend upkeep'])"
+        onclick="openModal('TikTok Shop Coordination')">
+        TikTok Shop Coordination
+      </div>
+
+      <div class="service" data-aos="fade-up" data-aos-delay="250"
+        onmouseenter="showBubble('Email Marketing Automation',
+        ['Workflow setup','Segmentation support','Campaign scheduling','Performance checks'])"
+        onclick="openModal('Email Marketing Automation')">
+        Email Marketing Automation
+      </div>
+
+      <div class="service" data-aos="fade-up" data-aos-delay="300"
+        onmouseenter="showBubble('SEO Content Management',
+        ['Content publishing','Meta updates','Content calendars','SEO tool coordination'])"
+        onclick="openModal('SEO Content Management')">
+        SEO Content Management
+      </div>
+
+      <div class="service" data-aos="fade-up" data-aos-delay="350"
+        onmouseenter="showBubble('Executive Leadership Support',
+        ['Inbox & calendar','Meeting prep','Priority filtering','Operations support'])"
+        onclick="openModal('Executive Leadership Support')">
+        Executive Leadership Support
+      </div>
+
+      <div class="service" data-aos="fade-up" data-aos-delay="400"
+        onmouseenter="showBubble('Data-Driven Process Optimization',
+        ['Workflow improvements','System organization','Efficiency design','Tool coordination'])"
+        onclick="openModal('Data-Driven Process Optimization')">
+        Data-Driven Process Optimization
+      </div>
+
+    </div>
+
+    <!-- Hover bubble -->
+    <div class="bubble">
+      <h3 id="bubbleTitle">Hover a service</h3>
+      <ul id="bubbleList"></ul>
+      <button class="btn" onclick="openModal(currentService)">Book Now</button>
+    </div>
+
+  </section>
+
+</main>
+
+</main>
+
+<footer class="footer">
+  <a href="mailto:hello@thesweetassist.com">Email</a> •
+  <a href="#">LinkedIn</a>
+  <div>The Sweet Assist—<i>assisting sweetly since 2021</i></div>
+  <div>© 2026 Sweet Assist</div>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- AOS library (comes first) -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initialize AOS -->
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
+<!-- Your script file (comes LAST) -->
+<script src="script.js"></script>
 </body>
+
+<div id="modal" class="modal">
+  <div class="modal-box">
+    Hello 👋
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
 </html>
