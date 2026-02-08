@@ -1,122 +1,159 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Sweet Assist</title>
-    <meta
-      name="description"
-      content="Where your professional growth gets a Sweet Assist."
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <link rel="apple-touch-icon" href="images/favicon.png">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Sweet Assist</title>
 
-  </head>
-
-  <body>
-    <!-- HEADER -->
-    <header class="site-header">
-      <div class="header-inner">
-        <!-- Replace logo.png with your actual file name -->
-        <img class="logo" src="images\full_logo.png" alt="The Sweet Assist logo" />
-        <p class="tagline">Where Your Professional Growth Gets a Sweet Assist!</p>
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <!-- Use your logo file here -->
+        <img class="brand-logo" src="images/full_logo.png" alt="Sweet Assist logo" />
+        <div class="brand-text">
+          <div class="brand-name">Sweet Assist</div>
+          <div class="brand-tagline">Where Your Professional Growth Gets a Sweet Assist!</div>
+        </div>
       </div>
-    </header>
 
-    <!-- MOVING STRIP -->
-    <section class="marquee" aria-label="Benefits">
-      <div class="marquee-track">
-        <span class="marquee-item">More Focus</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Smoother Workflows</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Clearer Communication</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Organized Backend</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Consistent Execution</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Time Back in Your Day</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Fewer Loose Ends</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Steady Support</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Less Stress</span>
-        <span class="dot">•</span>
+      <nav class="nav">
+        <button class="nav-link" data-jump="services">Services</button>
+        <button class="nav-link" data-jump="work">Work</button>
+        <button class="nav-link" data-jump="contact">Contact</button>
+      </nav>
+    </div>
 
-        <!-- Duplicate set for seamless loop -->
-        <span class="marquee-item">More Focus</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Smoother Workflows</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Clearer Communication</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Organized Backend</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Consistent Execution</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Time Back in Your Day</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Fewer Loose Ends</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Steady Support</span>
-        <span class="dot">•</span>
-        <span class="marquee-item">Less Stress</span>
-        <span class="dot">•</span>
+    <!-- Moving strip -->
+    <div class="ticker" aria-label="Moving announcement">
+      <div class="ticker-track" id="tickerTrack">
+        <span>Admin Support • Email & Calendar • Affiliate Support • Social Media Scheduling • Canva Design • Research • Systems & SOPs • </span>
+        <span>Admin Support • Email & Calendar • Affiliate Support • Social Media Scheduling • Canva Design • Research • Systems & SOPs • </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main (kept compact to avoid long scroll) -->
+  <main class="main">
+    <!-- Left card -->
+    <section class="about-card" id="work">
+      <div class="about-top">
+        <div class="photo-frame">
+          <!-- Put a portrait here if you want -->
+          <img src="images/profile_photo.png" alt="Your photo" onerror="this.style.display='none'; this.parentElement.classList.add('empty');" />
+          <div class="photo-fallback">
+            <span>photo</span>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <h1 class="title">Hi, I’m Sweet.</h1>
+          <p class="subtitle">
+            I support founders and busy teams with reliable admin, content coordination, and calm systems.
+          </p>
+          <p class="small">
+            This site is intentionally simple: quick overview, clear services, and easy booking.
+          </p>
+        </div>
+      </div>
+
+      <div class="work-box">
+        <div class="work-header">
+          <div class="work-title">Work</div>
+          <div class="work-hint">Loaded from <code>work.csv</code></div>
+        </div>
+        <ul class="work-list" id="workList">
+          <!-- Filled by JS -->
+        </ul>
+      </div>
+
+      <div class="about-actions">
+        <a class="btn" href="#contact" data-jump="contact">Contact</a>
+        <a class="btn btn-ghost" href="#services" data-jump="services">View Services</a>
       </div>
     </section>
 
-    <!-- ABOUT ME SECTION -->
-    <main class="page">
-      <section class="about" id="about">
-        <div class="about-card">
-          <div class="about-image">
-            <!-- Replace mary.jpg with your photo file name -->
-            <img src="images\profile_photo.png" alt="Mary Sweet portrait" />
-          </div>
+    <!-- Right: Services -->
+    <section class="services" id="services">
+      <div class="services-head">
+        <h2 class="section-title">Services Offered</h2>
+        <p class="section-subtitle">Hover a service to preview details. Click to book.</p>
+      </div>
 
-          <div class="about-text">
-            <p class="about-body">
-              I’m <strong>Mary Sweet</strong>, and I believe that the best support
-              is felt, not seen. With over <strong>4 years of experience</strong>,
-              I specialize in taking the weight off your shoulders.
-              <br /><br />
-              Whether it’s managing complex affiliate programs or keeping your
-              calendar airtight, I focus on the details so you can stay focused
-              on the big picture. I’m here to ensure your professional journey is
-              moving forward—assisting sweetly every step of the way.
-            </p>
-
-            <a class="btn" href="career.html">View Career History</a>
-          </div>
+      <div class="services-layout">
+        <div class="services-grid" id="servicesGrid" aria-label="Services list">
+          <!-- Filled by JS -->
         </div>
-      </section>
-    </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <nav class="footer-links" aria-label="Footer links">
-        <!-- Replace with your real links -->
-        <a href="mailto:hello@thesweetassist.com">Email</a>
-        <span class="sep">|</span>
-        <a href="#contact">Contact</a>
-        <span class="sep">|</span>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-      </nav>
+        <!-- Hover bubble (like your sketch) -->
+        <aside class="hover-bubble" id="hoverBubble" aria-live="polite">
+          <div class="bubble-title" id="bubbleTitle">Hover a service</div>
+          <ul class="bubble-points" id="bubblePoints"></ul>
+          <div class="bubble-actions">
+            <a class="btn" id="bubbleBook" href="#contact">Book Now</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
 
-      <p class="footer-brand">
-        The Sweet Assist — <em>assisting sweetly</em> since 2021
-      </p>
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a class="footer-link" id="emailLink" href="mailto:hello@yourdomain.com">Email</a>
+        <span class="dot">•</span>
+        <a class="footer-link" id="linkedinLink" href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
 
-      <p class="footer-copy">© <span id="year"></span></p>
-    </footer>
+      <div class="footer-line">
+        The Sweet Assist — assisting smoothly since 2021
+      </div>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+      <div class="footer-copy">
+        © <span id="year"></span> Sweet Assist
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple booking modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div class="modal-title" id="modalTitle">Book a Sweet Assist</div>
+        <button class="icon-btn" id="modalClose" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-text" id="modalText">
+          Tell me what you need help with and your preferred schedule.
+        </p>
+
+        <div class="modal-actions">
+          <a class="btn" id="modalMailto" href="mailto:hello@yourdomain.com?subject=Sweet%20Assist%20Inquiry">Email to Book</a>
+          <button class="btn btn-ghost" id="copyTemplate">Copy Message Template</button>
+        </div>
+
+        <textarea class="template" id="template" readonly>
+Hi Sweet,
+
+I’d like help with: [service]
+Goal/outcome: [what success looks like]
+Hours needed: [weekly or one-time]
+Timezone + best times: [your availability]
+Tools you use: [Gmail/Google Calendar/Notion/Sheets/etc.]
+
+Thanks!
+        </textarea>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
