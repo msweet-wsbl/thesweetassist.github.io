@@ -158,7 +158,6 @@
     <div class="bubble">
       <h3 id="bubbleTitle">Hover a service</h3>
       <ul id="bubbleList"></ul>
-      <button class="btn" onclick="openModal(currentService)">Book Now</button>
     </div>
 
   </section>
@@ -191,11 +190,52 @@
 <script src="script.js"></script>
 </body>
 
-<div id="modal" class="modal">
-  <div class="modal-box">
-    Hello 👋
-    <button onclick="closeModal()">Close</button>
+<!-- Booking Modal -->
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <h3 id="modalTitle">Book a Sweet Assist</h3>
+      <button class="modal-close" type="button" onclick="closeModal()">✕</button>
+    </div>
+
+    <form id="bookingForm" onsubmit="sendBookingEmail(event)">
+      <label class="field">
+        <span>Service</span>
+        <select id="serviceSelect" name="service" required>
+          <option value="" selected disabled>Select a service</option>
+          <option value="Affiliate Operations Support">Affiliate Operations Support</option>
+          <option value="TikTok Shop Coordination">TikTok Shop Coordination</option>
+          <option value="Email Marketing Automation">Email Marketing Automation</option>
+          <option value="SEO Content Management">SEO Content Management</option>
+          <option value="Executive Leadership Support">Executive Leadership Support</option>
+          <option value="Data-Driven Process Optimization">Data-Driven Process Optimization</option>
+        </select>
+      </label>
+
+
+      <label class="field">
+        <span>Your name</span>
+        <input id="nameInput" type="text" name="name" placeholder="Your name" required>
+      </label>
+
+      <label class="field">
+        <span>Your email</span>
+        <input id="emailInput" type="email" name="email" placeholder="you@email.com" required>
+      </label>
+
+      <label class="field">
+        <span>Message</span>
+        <textarea id="messageInput" name="message" rows="5" placeholder="Tell me what you need help with..." required></textarea>
+      </label>
+
+      <button class="btn" type="submit">Send Email</button>
+    </form>
+
+    <p class="modal-note">
+      This will open your email app with a pre-filled message.
+    </p>
   </div>
 </div>
+
 
 </html>
